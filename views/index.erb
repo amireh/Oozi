@@ -1,0 +1,35 @@
+
+  <ul class="controls">
+    <li class="cabinet" title="choose multiple images using a file dialog">
+<input id="files-upload" class="file" type="file" multiple />
+      <label>classic upload</label>
+    </li>
+    <li id="save" title="export the spritesheet to a PNG file">save</li>
+  </ul>
+  <span class="caption" id="canvas-caption">your spritesheet</span>
+  <div class="container block" id="dropbox">
+    <span id="overlay" class="drop-over-me">drop some images here</span>
+	  <canvas class="canvas" id="myCanvas" width="600" height="480">
+	   <p>Sorry! Oozi requires a canvas-aware web browser, such as Firefox, Google Chrome, Safari or Opera.</p>
+	  </canvas>
+	</div>
+	
+  <span class="caption" id="cssbox-caption">the css code</span>	
+	<div id="myCSSBox" class="block css-box">
+	  <p><label>.null {</label><br /><span>foo: bar;</span><br /> }</p>
+	</div>
+
+<% content_for :scripts do %>
+
+  <script src='javascripts/base64.js' type='text/javascript'></script> 
+  <script src='javascripts/canvas2image.js' type='text/javascript'></script> 
+  <script src='javascripts/si.files.js' type='text/javascript'></script> 
+  
+  <script src='javascripts/oozi/oozi.js' type='text/javascript'></script>   
+  <script src='javascripts/oozi/sprite.js' type='text/javascript'></script>   
+  <script src='javascripts/oozi/grid.js' type='text/javascript'></script>     
+  <script src='javascripts/oozi/ui.js' type='text/javascript'></script>  
+<% end %>
+
+</body>
+</html>
