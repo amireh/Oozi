@@ -104,11 +104,11 @@ Oozi = function() {
 			sprite.render(myContext);
 			html = "<p class='css-class' id='" + sprite.name + "'>";
 			html += "<label for='" + sprite.name + "'>." + sprite.name + " {</label>";
-			html += "<br /><span class='css-directive'>background-position: " + sprite.x + " " + sprite.y + ";</span>";
+			html += "<br /><span class='css-directive'>background-position: " + sprite.x + "px " + sprite.y + "px;</span>";
 			html += "<br /><span class='css-directive'>background-image: url(IMAGE_NAME.png);</span>"
 			html += "<br /><span class='css-directive'>background-repeat: no-repeat;</span>"
-			html += "<br /><span class='css-directive'>width: " + this.w + ";</span>"
-			html += "<br /><span class='css-directive'>height: " + this.h + ";</span>"
+			html += "<br /><span class='css-directive'>width: " + this.w + "px;</span>"
+			html += "<br /><span class='css-directive'>height: " + this.h + "px;</span>"
 			html += "<br />}</p>"
 			myCSSBox.append(html);
 		});		

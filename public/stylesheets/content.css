@@ -23,9 +23,9 @@ a:hover {
 
 .header .logo {
 	background: url(images/oozi.png) no-repeat;
-	height: 220px;
+	width: 201px;
+	height: 166px;
 	float: left;
-	width: 210px;
 	position: absolute;
 	left: 10px;
 	top: 10px;
@@ -71,12 +71,6 @@ a:hover {
 	-moz-box-shadow: #454545 0 0 30px 1px;
 }
 
-.buttons {
-	position: absolute;
-	top: 180px;
-	left: 840px;
-	z-index: 100;
-}
 .container {
 	width: 600px;
 	float: left;
