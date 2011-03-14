@@ -172,30 +172,25 @@ span.drop-over-me {
 	margin-bottom: 0;
 	position: absolute;
 	float: left;
-	padding: 10px 10px;
-	top: 0px;
-	opacity: 0.5;
+	padding: 5px 10px;
+	top: 10px;
 }
 
 .caption.selected,
 .caption:hover {
+	z-index: 100;
 	padding: 10px;
 	top: 0;
-	z-index: 100;
 	cursor: pointer;
-	opacity: 1;	
 }
 #canvas-caption {
 	left: 0;
-	top: 0;
 }
 #info-caption {
 	left: 120px;
 }
 #cssbox-caption {
 	right: 0px;
-	top: 0;
-
 }
 
 .SI-FILES-STYLIZED li.cabinet
