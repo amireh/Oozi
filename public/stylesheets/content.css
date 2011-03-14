@@ -64,8 +64,11 @@ a:hover {
 }
 .block {
 	border: 0px solid #AEE239;
+	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-bottomright: 5px;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
+	
 	background: #fff;
 	-webkit-box-shadow: #454545 0 0 30px 1px;
 	-moz-box-shadow: #454545 0 0 30px 1px;
@@ -145,6 +148,8 @@ span.drop-over-me {
 	z-index: 100;
 	position: relative;
 	border-top-right-radius: 5px;
+	-moz-border-radius-topright: 5px;
+	
 	font-weight: bold;
 	-webkit-box-shadow: #454545 0 0 2px 1px;
 	-moz-box-shadow: #454545 0 0 2px 1px;
@@ -169,6 +174,9 @@ span.drop-over-me {
 	font-weight: bold;
 	border-top-right-radius: 10px;
 	border-top-left-radius: 10px;	
+	-moz-border-radius-topright: 10px;
+	-moz-border-radius-topleft: 10px;
+	
 	margin-bottom: 0;
 	position: absolute;
 	float: left;
@@ -239,26 +247,36 @@ li.cabinet label:hover {
 	position: absolute;
 	top: 558px;
 	left: 20px;
-	padding: 5px 0px 5px 20px;
+	padding: 5px 10px;
 	-webkit-box-shadow: #454545 0px 0 30px 1px;
-	-moz-box-shadow: #454545 0 0 2px 1px;
+	-moz-box-shadow: #454545 0 0 30px 1px;
 	z-index: -10;
-background: #fff;
+	background: #fff;
 	text-align: center;
+	
+
+	width: 240px;
 	border-bottom-right-radius: 10px;
-	border-bottom-left-radius: 10px;	
+	border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	-moz-border-radius-bottomright: 10px;
+		
 	background: #aee239;
 	border-top: none;
 }
 
-.support p {
+.support span {
 	float: left;
+	position: relative;
+	top: 15px;
+	left: 0px;
+	margin-right: 10px;
 }
 .icon {
 	background-image: url(images/spritesheet.png);
 	background-repeat: no-repeat;	
 	clear: none;
-	margin: auto 5px;
+	margin: auto 0;
 	float: left;
 }
 .chrome_48x48 {
@@ -277,7 +295,7 @@ width: 32px;
 height: 32px;
 position: relative;
 top: 10px;
-	left: -19px;
+	left: -0px;
 }
 
 .firefox_32x32 {
@@ -288,5 +306,13 @@ width: 32px;
 height: 32px;
 	position: relative;
 	top: 10px;
-	left: -10px;
+	left: 0px;
+}
+
+.fb-like {
+	padding: 0;
+	margin: 0;
+	top: 20px;
+	right: -75px;
+	position: absolute;
 }
