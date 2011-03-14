@@ -5,6 +5,7 @@
   <title>Oozi - CSS Spritesheet Generator</title>
 
   <% if settings.environment == :development %>
+    <link rel="stylesheet" type="text/css" href="stylesheets/grid.css" />
     <link rel="stylesheet" type="text/css" href="stylesheets/common.css" />
     <link rel="stylesheet" type="text/css" href="stylesheets/content.css" />
   <% else %>
@@ -19,20 +20,22 @@
     <h1>Oozi<span> - here to make images STICK</span></h1>
   </div>
 
-  <div class="content">
+  <div class="content container_16">
     <%= yield %>
+    <div class="clear"></div>
+  </div>
+
+  <div class="footer container_16">
     <div class="support">
       <span>Oozi works best in</span>
         <div class="icon chrome_48x48"></div>
         <div class="icon firefox_32x32"></div>
         <div class="icon safari_32x32"></div>
-      <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Foozi.amireh.net&amp;layout=standard&amp;show_faces=false&amp;width=55&amp;action=like&amp;font=lucida+grande&amp;colorscheme=light&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:55px; height:35px;" allowTransparency="true" class="fb-like"></iframe>           
+      <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Foozi.amireh.net&amp;layout=standard&amp;show_faces=false&amp;width=55&amp;action=like&amp;font=lucida+grande&amp;colorscheme=light&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:55px; height:35px;" allowTransparency="true" class="fb-like"></iframe>
+      <div class="clear"></div>
     </div>
-  </div>
-
-  <div class="footer">
     <p>Oozi ©2011 · Developed by <a href="http://www.amireh.net">Amireh</a></p>
-     
+     <div class="clear"></div>
   </div>
   
   <% if settings.environment == :development %>

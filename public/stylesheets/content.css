@@ -1,7 +1,7 @@
 body {
 	background: #fff url(images/bg.png) repeat-x;
 	color: #454545;
-	padding: 100px;
+	padding: 100px 0 0 0;
 	font: 400 13px/18px "Helvetica Neue", "Liberation Sans", "Lucida Grande", Tahoma, Verdana, Arial, Helvetica, FreeSans, sans-serif !important;
 }
 
@@ -42,11 +42,17 @@ a:hover {
 	font-style: italic;
 }
 .footer {
-	float: left;
-	width: 100%;
 	margin-top: 20px;	
 	font-size: 11px;
-	text-align: center;
+	position: relative;
+}
+
+.footer p {
+	position: relative;
+	top: 0;
+	left: 220px;
+	float: left;
+	margin: 0;
 }
 
 .content {
@@ -90,6 +96,8 @@ a:hover {
 	position: relative;
 	overflow: auto;
 	padding: 20px;
+	border-bottom-left-radius: 0;
+	-moz-border-radius-bottomleft: 0;
 }
 .info {
 	padding: 0 20px;
@@ -244,18 +252,18 @@ li.cabinet label:hover {
 .support {
 	background-repeat: no-repeat;
 	display: block;
-	position: absolute;
-	top: 558px;
-	left: 20px;
+	position: relative;
+	top: -20px;
+	left: 0;
 	padding: 5px 10px;
 	-webkit-box-shadow: #454545 0px 0 30px 1px;
 	-moz-box-shadow: #454545 0 0 30px 1px;
 	z-index: -10;
 	background: #fff;
 	text-align: center;
-	
+	float: left;
 
-	width: 240px;
+	width: 220px;
 	border-bottom-right-radius: 10px;
 	border-bottom-left-radius: 10px;
 	-moz-border-radius-bottomleft: 10px;
