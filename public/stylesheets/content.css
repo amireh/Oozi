@@ -320,7 +320,7 @@ height: 32px;
 .fb-like {
 	padding: 0;
 	margin: 0;
-	top: 20px;
-	right: -75px;
+	top: 0;
+	left: 260px;
 	position: absolute;
 }
