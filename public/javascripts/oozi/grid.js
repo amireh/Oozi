@@ -145,7 +145,7 @@ Grid.prototype = {
     };
       
     // really shouldn't be here, display a message to the user
-		console.log("WARNING: SHOULD NOT BE HERE");
+		//console.log("WARNING: SHOULD NOT BE HERE");
     return { x: 0, y: 0 };
   },
   

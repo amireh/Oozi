@@ -1,0 +1,14 @@
+<p>Oozi is a CSS spritesheet generator built entirely in HTML5 and JavaScript. The application does not require uploading of images, but instead utilizes the HTML5 File API to process images locally. Also, the interface allows for Drag &amp; Drop, conveniently enabling the user to drag any number of images using Finder or any file browser into the web app!</p>
+
+<h3>Some stuff you should know</h3>
+<ul>
+  <li>The created image is in PNG format, but due to technical limitations, Oozi can not name it for you nor set the extension</li>
+  <li>The image is transparent and preserves sprites' transparency</li>
+  <li>No uploading of images happens, nor is there any server-side processing, this is all done using the HTML5 File API</li>
+</ul>
+<h3>Known Issues</h3>
+<ul>
+  <li>There's no support for Opera, IE, or Safari &lt; 6, as they do not support the HTML5 File API yet</li>
+</ul>
+<hr />
+<p>If you're not sure how to use CSS spritesheets, or you don't know why you should, please check <a href="http://css-tricks.com/css-sprites/">this resource</a> as it seems to cover it nicely.</p>

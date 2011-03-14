@@ -69,15 +69,28 @@ a:hover {
 	background: #fff;
 	-webkit-box-shadow: #454545 0 0 30px 1px;
 	-moz-box-shadow: #454545 0 0 30px 1px;
+	
+	background: #ffffff; /* old browsers */
+	background: -moz-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* firefox */
+
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#ededed)); /* webkit */
+
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* ie */
 }
 
-.container {
+.container,
+.info {
 	width: 600px;
+	height: 480px;
 	float: left;
-	min-height: 440px;
+	min-height: 480px;
 	position: relative;
 	overflow: auto;
 	padding: 20px;
+}
+.info {
+	padding: 0 20px;
+	height: 520px;
 }
 .container.over {
 	opacity: 0.5;
@@ -94,6 +107,8 @@ a:hover {
 	min-height: 40px;
 	padding: 0 20px;
 	font-size: 13px;
+	max-height: 520px;
+	overflow: auto;
 }
 
 .css-box span {
@@ -101,7 +116,6 @@ a:hover {
 }
 
 .css-box p label {
-
 	font-weight: bold;
 }
 
@@ -150,32 +164,38 @@ span.drop-over-me {
 
 .caption {
 	background: #fff;
-	z-index: 100;
-	position: relative;
-	padding: 10px 10px;
+	z-index: 0;
 	font-size: 12px;
 	font-weight: bold;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;	
+	margin-bottom: 0;
+	position: absolute;
+	float: left;
+	padding: 10px 10px;
+	top: 0px;
+	opacity: 0.5;
 }
 
-#canvas-caption {
-	float: left;
-	position: absolute;
-	left: 0;
-	border-top-right-radius: 10px;
-	border-top-left-radius: 10px;	
-	margin-bottom: 0;
+.caption.selected,
+.caption:hover {
+	padding: 10px;
 	top: 0;
-	padding: 10px 10px;
+	z-index: 100;
+	cursor: pointer;
+	opacity: 1;	
+}
+#canvas-caption {
+	left: 0;
+	top: 0;
+}
+#info-caption {
+	left: 120px;
 }
 #cssbox-caption {
-	float: left;
-	position: absolute;
 	right: 0px;
-	border-top-right-radius: 10px;
-	border-top-left-radius: 10px;	
-	margin-bottom: 0;
 	top: 0;
-	padding: 10px 10px;
+
 }
 
 .SI-FILES-STYLIZED li.cabinet
@@ -214,3 +234,64 @@ li.cabinet label:hover {
 }
 
 
+.info {
+	display: none;
+}
+
+.support {
+	background-repeat: no-repeat;
+	display: block;
+	position: absolute;
+	top: 558px;
+	left: 20px;
+	padding: 5px 0px 5px 20px;
+	-webkit-box-shadow: #454545 0px 0 30px 1px;
+	-moz-box-shadow: #454545 0 0 2px 1px;
+	z-index: -10;
+background: #fff;
+	text-align: center;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;	
+	background: #aee239;
+	border-top: none;
+}
+
+.support p {
+	float: left;
+}
+.icon {
+	background-image: url(images/spritesheet.png);
+	background-repeat: no-repeat;	
+	clear: none;
+	margin: auto 5px;
+	float: left;
+}
+.chrome_48x48 {
+background-position: -0px -0px;
+background-image: url(images/spritesheet.png);
+background-repeat: no-repeat;
+width: 48px;
+height: 48px;
+}
+
+.safari_32x32 {
+background-position: -64px -0px;
+background-image: url(images/spritesheet.png);
+background-repeat: no-repeat;
+width: 32px;
+height: 32px;
+position: relative;
+top: 10px;
+	left: -19px;
+}
+
+.firefox_32x32 {
+background-position: -96px -0px;
+background-image: url(images/spritesheet.png);
+background-repeat: no-repeat;
+width: 32px;
+height: 32px;
+	position: relative;
+	top: 10px;
+	left: -10px;
+}

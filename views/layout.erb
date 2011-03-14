@@ -1,14 +1,14 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Oozi - CSS Spritesheet Generator</title>
 
   <% if settings.environment == :development %>
-    <link rel="stylesheet" type="text/css" href="stylesheets/common.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/content.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/common.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/content.css" />
   <% else %>
-    <link rel="stylesheet" type="text/css" href="stylesheets/application.min.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/application.min.css" />
   <% end %>
   
 </head>
@@ -18,13 +18,22 @@
     <div class="logo"></div>
     <h1>Oozi<span> - here to make images STICK</span></h1>
   </div>
-  
+
   <div class="content">
     <%= yield %>
+    <div class="support">
+      <p>Oozi works best in
+        <div class="icon chrome_48x48"></div>
+        <div class="icon firefox_32x32"></div>
+        <div class="icon safari_32x32"></div>
+      </p>
+    </div>
   </div>
-  
+
   <div class="footer">
-    <p><a href="/changelog">Changelog</a> · <a href="/known_issues">Known Issues</a> · Oozi ©2011. Developed by <a href="http://www.amireh.net">Amireh</a></p>
+    <p>Oozi ©2011 · Developed by <a href="http://www.amireh.net">Amireh</a></p>
+    </div>
+    <p></p>
   </div>
   
   <% if settings.environment == :development %>

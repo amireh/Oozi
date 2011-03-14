@@ -1,4 +1,4 @@
-var myCanvas = document.getElementById("myCanvas");
+var myCanvas = document.getElementsByName("myCanvas")[0];
 var myContext = myCanvas.getContext("2d");
 
 Oozi = function() {
@@ -7,7 +7,7 @@ Oozi = function() {
 	this.grid = null;
 	
 	function align_staircase() {
-		console.log("aligning as a staircase");
+		//console.log("aligning as a staircase");
 		
     var bounds = { h: 0, w: 0 };
     var highest, longest = null;
@@ -70,9 +70,9 @@ Oozi = function() {
             && bounds.w - ( offset.y + sprite.h ) > aligned.all[idx+1].h)
         {
           
-          console.log("offset y : " + offset.y + ", sprite h : " + sprite.h);
+          //console.log("offset y : " + offset.y + ", sprite h : " + sprite.h);
         } else { 
-          console.log("offset y : " + offset.y);
+          //console.log("offset y : " + offset.y);
           offset.y += sprite.h;
         }
       }
@@ -86,7 +86,7 @@ Oozi = function() {
   }; // align()
 
 	function align_grid() {
-		console.log("aligning on a grid");
+		//console.log("aligning on a grid");
 		
 		this.grid = new Grid(sprites);
 		this.grid.align();
@@ -102,14 +102,14 @@ Oozi = function() {
 		myCSSBox.empty();
 		$.each(this.sprites, function(idx, sprite) {
 			sprite.render(myContext);
-			html = "<p class='css-class' id='" + sprite.name + "'>";
-			html += "<label for='" + sprite.name + "'>." + sprite.name + " {</label>";
-			html += "<br /><span class='css-directive'>background-position: " + sprite.x + "px " + sprite.y + "px;</span>";
-			html += "<br /><span class='css-directive'>background-image: url(IMAGE_NAME.png);</span>"
-			html += "<br /><span class='css-directive'>background-repeat: no-repeat;</span>"
-			html += "<br /><span class='css-directive'>width: " + this.w + "px;</span>"
-			html += "<br /><span class='css-directive'>height: " + this.h + "px;</span>"
-			html += "<br />}</p>"
+			html = '<p id="' + sprite.name + '">';
+			html += '<label for="' + sprite.name + '">.' + sprite.name + ' {</label>';
+			html += '<br /><span>background-position: -' + sprite.x + 'px -' + sprite.y + 'px;</span>';
+			html += '<br /><span>background-image: url(IMAGE_NAME.png);</span>'
+			html += '<br /><span>background-repeat: no-repeat;</span>'
+			html += '<br /><span>width: ' + this.w + 'px;</span>'
+			html += '<br /><span>height: ' + this.h + 'px;</span>'
+			html += '<br />}</p>'
 			myCSSBox.append(html);
 		});		
 	};
@@ -125,7 +125,13 @@ Oozi = function() {
     log: function(msg) {
       console.log(msg);
     },
-
+		reset: function() {
+			clearCanvas();
+			sprites = [];
+			$("#myCSSBox").html("<p><label>.null {</label><br /><span>foo: bar;</span><br /> }</p>");
+			$("#overlay").show();
+		},
+		
 		addSprite: function(image) {
 			sprite = new Sprite(image, image.name);
 			sprites.push(sprite);

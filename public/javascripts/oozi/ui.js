@@ -50,6 +50,7 @@ $(function() {
 	}
 
 	function traverseFiles (files) {
+		$("#overlay").hide();
 		if (typeof files !== "undefined") {
 			last_batch_size = files.length;
 			for (var i=0, l=files.length; i<l; i++) {
@@ -89,17 +90,27 @@ $(function() {
 	dropArea.addEventListener("drop", function (evt) {
 		//this.className = this.className.replace(" over", "");
 		$("#dropbox").removeClass("over");
-		$("#overlay").hide();
 		traverseFiles(evt.dataTransfer.files);
 		evt.preventDefault();
 		evt.stopPropagation();
 	}, false);
 	
-	$("#align-grid").click(function() {
-		Oozi.chooseScheme("grid");
+	$("#reset").click(function() {
+		Oozi.reset();
+	})
+	
+	$("#info-caption").click(function() {
+		$("#dropbox").hide();
+		$("#info").show();
+		$(this).addClass("selected");
+		$("#canvas-caption").removeClass("selected");
 	});
-	$("#align-staircase").click(function() {
-		Oozi.chooseScheme("staircase");
+	
+	$("#canvas-caption").click(function() {
+		$("#dropbox").show();
+		$("#info").hide();
+		$(this).addClass("selected");
+		$("#info-caption").removeClass("selected");		
 	});
 	
 	SI.Files.stylizeAll();
