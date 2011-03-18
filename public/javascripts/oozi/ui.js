@@ -8,10 +8,12 @@
  *   Web Page: http://robertnyman.com/html5/fileapi-upload/fileapi-upload.html
  */
 
-$(function() {
-
+window.onload = function() {
+	
 	var filesUpload = document.getElementById("files-upload"),
 		dropArea = document.getElementById("dropbox"),
+		infoTab = document.getElementById("info"),
+		overlay = document.getElementById("overlay"),
 		mySaveButton = document.getElementById("save");
 
 	// will be used to track multi-image uploads (et la "batch")
@@ -20,7 +22,7 @@ $(function() {
 	var processed = 0;
 	
   mySaveButton.addEventListener("click", function() {
-    Canvas2Image.saveAsPNG(myCanvas);
+    Canvas2Image.saveAsPNG(Oozi.canvas);
     return false;
   }, false);
   
@@ -50,7 +52,7 @@ $(function() {
 	}
 
 	function traverseFiles (files) {
-		$("#overlay").hide();
+		overlay.style.display = "none";
 		if (typeof files !== "undefined") {
 			last_batch_size = files.length;
 			for (var i=0, l=files.length; i<l; i++) {
@@ -77,7 +79,7 @@ $(function() {
 
 	dropArea.addEventListener("dragenter", function (evt) {
 		//this.className += " over";
-		$("#dropbox").addClass("over");
+		this.className += " over";
 		evt.preventDefault();
 		evt.stopPropagation();
 	}, false);
@@ -88,30 +90,38 @@ $(function() {
 	}, false);
 
 	dropArea.addEventListener("drop", function (evt) {
-		//this.className = this.className.replace(" over", "");
-		$("#dropbox").removeClass("over");
+		this.className = this.className.replace(" over", "");
 		traverseFiles(evt.dataTransfer.files);
 		evt.preventDefault();
 		evt.stopPropagation();
 	}, false);
 	
-	$("#reset").click(function() {
-		Oozi.reset();
-	})
+	document.getElementById("reset").addEventListener("click", function(evt) {
+		Oozi.reset();		
+	}, false);
 	
-	$("#info-caption").click(function() {
-		$("#dropbox").hide();
-		$("#info").show();
-		$(this).addClass("selected");
-		$("#canvas-caption").removeClass("selected");
-	});
+	var captions = { 
+		canvas: document.getElementById("canvas-caption"), 
+		info: document.getElementById("info-caption")
+	};
 	
-	$("#canvas-caption").click(function() {
-		$("#dropbox").show();
-		$("#info").hide();
-		$(this).addClass("selected");
-		$("#info-caption").removeClass("selected");		
-	});
+	captions["info"].addEventListener("click", function(evt) {
+		
+		dropArea.style.display = "none";
+		infoTab.style.display = "block";
+		
+		captions["info"].className += " selected";
+		captions["canvas"].className = captions["canvas"].className.replace(" selected", "");
+	}, false);
+	
+	
+	captions["canvas"].addEventListener("click", function(evt) {
+		dropArea.style.display = "block";
+		infoTab.style.display = "none";
+		
+		captions["canvas"].className += " selected";
+		captions["info"].className = captions["info"].className.replace(" selected", "");
+	}, false);
 	
 	SI.Files.stylizeAll();
-});
+};

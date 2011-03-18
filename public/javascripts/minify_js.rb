@@ -13,7 +13,7 @@ def print_stats(output, original_size)
 end
 
 output = ""
-for i in 0..2 do
+for i in 0..1 do
 	size = 0;
 	if i == 0
 		output = "application.min.js"

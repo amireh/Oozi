@@ -24,6 +24,7 @@ Sprite.prototype = {
       h: Math.ceil(this.h / size.y)
     }
   },
+	// for convenience
   toString: function() {
     return "[" + this.x + "," + this.y + "], my dimensions are [" + this.w + "," + this.h + "]";
   },
